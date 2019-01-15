@@ -1,52 +1,63 @@
 /*
-Theme Name: Boilerplate theme
-Author: Mikko Heikkilä | Hungry
-Author URI: hungry.fi
+Theme Name: Theme name
+Author: Autor name | Company
+Author URI: company.com
 Description: This is a custom css grid theme for wordpress
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
-
 /* ==========================================================================
    Variables
    ========================================================================== */
-   :root {
+:root {
 
-	/************
-	* Font size *
-	************/
+	/*********
+	* Fonts *
+	*********/
 	--base-font-size: 10px;
+	--heading-margins: 0px;
+	
 
 	/*********
 	* Colors *
 	*********/
-	--primary: blue;
-	--secondary: yellow;
-	--highlight: red;
+	--primary: #0040ff;
+	--secondary: #0e2b7f;
+	--highlight: #ee7b10;
+	
+	--neutral-dark: #1e1e1e;
+	--neutral: #8c8c8c;
+	--neutral-light: #e8e8e8;
+
+	/**********
+	* Margins *
+	**********/	
+	--section-margin: 15px;
+
+	/***********
+	* Paddings *
+	***********/	
+	--section-padding: 30px;
 
 }
 
 /* ==========================================================================
-   Breakpoints
+  Breakpoints
+ 
+  Small devices (landscape phones, 576px and down)
+  @media (max-width: 576px) {...}
+  
+  Medium devices (tablets, 768px and down)
+  @media (max-width: 768px) {...}
+ 
+  Large devices (desktops, 992px and down)
+  @media (max-width: 992px) {...}
+  
+  Extra large devices (large desktops, 1200px and down)
+  @media (max-width: 1200px) {...}
+
 ========================================================================== */  
-
-  /* Small devices (landscape phones, 576px and down) */
-  @media (max-width: 576px) {
-
-  }
-  /* Medium devices (tablets, 768px and down) */
-  @media (max-width: 768px) {
-
-  }
-  /* Large devices (desktops, 992px and down) */
-  @media (max-width: 992px) {
-
-  }
-  /* Extra large devices (large desktops, 1200px and down) */
-  @media (max-width: 1200px) {
-
-  }
    
 /* ==========================================================================
    General Tags
@@ -58,6 +69,7 @@ html,
 body{
 	box-sizing: border-box;
 	font-size: var(--base-font-size);
+	margin: 0px;
 }
 *,
 *:before,
@@ -67,22 +79,38 @@ body{
 
 
 /*---------- Headings ----------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	margin: var(--heading-margins);
+}
+
 h1{
+	color: var(--primary);
 	font-size: 4rem;
+	text-transform: uppercase;
 }
 h2{
+	color: var(--primary);
 	font-size: 3rem;
 }
 h3{
+	color: var(--primary);
 	font-size: 2.5rem;
 }
 h4{
+	color: var(--secondary);
 	font-size: 2rem;
 }
 h5{
+	color: var(--secondary);
 	font-size: 1.8rem;
 }
 h6{
+	color: var(--secondary);
 	font-size: 1.6rem;
 }
 
@@ -176,44 +204,59 @@ textarea{
     width: 100%;
     height: auto;
 }
+.w-100 img{
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
 
-/*------- Margins -------*/
-.mt-xs{margin-top: 15px;}
-.mt-sm{margin-top: 30px;}
-.mt-md{margin-top: 45px;}
-.mt-lg{margin-top: 60px;}
-.mt-xl{margin-top: 75px;}
-.mb-xs{margin-bottom: 15px;}
-.mb-sm{margin-bottom: 30px;}
-.mb-md{margin-bottom: 45px;}
-.mb-lg{margin-bottom: 60px;}
-.mb-xl{margin-bottom: 75px;}
-
-/*------- Paddings -------*/
-.pt-xs{padding-top: 15px;}
-.pt-sm{padding-top: 30px;}
-.pt-md{padding-top: 45px;}
-.pt-lg{padding-top: 60px;}
-.pt-xl{padding-top: 75px;}
-.pb-xs{padding-bottom: 15px;}
-.pb-sm{padding-bottom: 30px;}
-.pb-md{padding-bottom: 45px;}
-.pb-lg{padding-bottom: 60px;}
-.pb-xl{padding-bottom: 75px;}
+.text-center{
+	text-align: center;
+}
 
 /* ==========================================================================
    Structure/Content
    Styles that define the page structure and/or 
    are directly related with the page content.
    ========================================================================== */
+/*--------- Containers ---------*/
+.container{
+	width: 100%;
+}
+section{
+	max-width: 1200px;
+	width: 100%;
+	margin: var(--section-margin) auto;
+	padding: var(--section-padding);
+}
 
 /*---------- Header ----------*/
+header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: var(--neutral-light);
+	padding: var(--section-padding);
+}
 
 /*--------- Navigation ---------*/
+.nav{
+	margin: 0px;
+}
+
+.nav li{
+	list-style: none;
+	display: inline-block;
+}
 
 /*--------- Body ---------*/
 
 /*--------- Footer ---------*/
+footer{
+	background-color: var(--neutral-light);
+	padding: var(--section-padding);
+	
+}
 
 /* ==========================================================================
    Modules

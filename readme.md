@@ -2,4 +2,3 @@
 
 The starting point for my wordpress theme development with bootstrap.
 All the essentials, nothing unnecessary.
-# wp-boilerplate-theme

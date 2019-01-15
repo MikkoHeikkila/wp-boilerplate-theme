@@ -28,16 +28,21 @@ function theme_enqueue_scripts() {
 	// jQuery.
 	wp_enqueue_script( 'jquery' );
 
+	//Fancybox
+	wp_enqueue_script( 'fancy-script', $template_url . '/js/fancybox-master/jquery.fancybox.min.js', array( 'jquery' ), null, true );
+	wp_enqueue_style( 'fancy-style',  $template_url . '/js/fancybox-master/jquery.fancybox.min.css' );
+
 	//Main Style
 	wp_enqueue_style( 'main-style', get_stylesheet_uri() );
 
-  //Main script
-  wp_enqueue_script( 'main-script', $template_url . '/js/main.js', array( 'jquery' ), null, true );
+	//Main script
+	wp_enqueue_script( 'main-script', $template_url . '/js/main.js', array( 'jquery' ), null, true );
 
 	// Load Thread comments WordPress script.
 	if ( is_singular() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_scripts', 1 );

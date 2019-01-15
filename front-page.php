@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/*
+* Front page template
+*/
+get_header(); ?>
 
 <section>
 

@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/*
+* Default post template
+*/
+get_header(); ?>
 
 <section>
 
